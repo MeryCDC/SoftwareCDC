@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +13,30 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/home', [DashboardController::class, 'index'])->middleware('auth')->name('home');
+
+Route::group(['middleware' => 'auth'], function () 
+{
+    Route::get('/', [DashboardController::class , 'index'])->name('home');
+});  
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+Route::resource('/dashboard' , DashboardController::class );
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Auth::routes();
+
+Route::get('/home', [EntradasImportacionController::class, 'index'])->middleware('auth')->name('home');
+
+Route::group(['middleware' => 'auth'], function () 
+{
+    Route::get('/', [EntradasImportacionController::class , 'index'])->name('home');
+});  
+
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+}); */
