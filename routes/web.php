@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuiasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +24,12 @@ Route::group(['middleware' => 'auth'], function ()
 });  
 
 /* ----------------------------------------------------------------------------------------------------- */
+Route::get('/envio', [GuiasController::class, 'index'])->name('envio.index')->middleware('auth');
 
-Route::resource('/dashboard' , DashboardController::class );
+Route::resource('/dashboard' , DashboardController::class )->middleware('auth');
+
+/* Route::resource('/envio' ,GuiasController::class)->middleware('auth'); */
+
 /* ----------------------------------------------------------------------------------------------------- */
 
 /* Auth::routes();

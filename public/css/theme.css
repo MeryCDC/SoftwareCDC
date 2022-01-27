@@ -1,0 +1,44 @@
+/*!
+ * Theme Name: Default
+ * Package : DashLite
+ * Author: Softnio
+ * Author URI: http://themeforest.net/user/softnio
+ * Version	 :	1.0.0
+ * Updated	 :	07.23.2020
+**/
+
+.btn-primary {
+    color: #fff;
+    background-color: #6CC04A;
+    border-color: #6CC04A;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #232222;
+    border-color: #232222;
+}
+
+.link-primary {
+    color: #000000 !important;
+}
+
+.form-control:focus, div.dataTables_wrapper div.dataTables_filter input:focus, .dual-listbox .dual-listbox__search:focus {
+    color: #3c4d62;
+    background-color: #fff;
+    border-color: #6CC04A;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgb(34 99 179 / 10%);
+}
+
+img {
+    max-width: 300%;
+}
+
+.user-avatar, [class^="user-avatar"]:not([class*="-group"]) {
+    background: #6CC04A;
+}
+
+.dropdown-menu-s1 {
+    border-top: 3px solid #6CC04A;
+}
